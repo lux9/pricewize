@@ -1,14 +1,19 @@
+<div class="container">
 
-<%= simple_form_for(@product) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= simple_form_for(@product) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :views %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%#= f.input :views %>
+      <%= f.input :category_id, collection: Category.all %>  
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+    
+
+</div>
