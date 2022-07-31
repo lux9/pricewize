@@ -3,13 +3,24 @@
     <strong>Nombre:</strong>
     <%= product.title %>
   </p>
-  <p>
-    <strong>Categoria:</strong>
-    <%= link_to product.category.title, category_path(product.category), class:'btn btn-sm btn-outline-primary' %>
-  </p>
-  <p>
-    <strong>Views:</strong>
-    <%= product.views %>
-  </p>
-
+  <div class="row">
+    <div class="col-6">
+      <p>
+        <div class="attributes-size"><strong>Categoria:</strong>
+          <%= link_to product.category.title, category_path(product.category), class:'attributes-size btn btn-sm btn-outline-primary' %>
+        </div>
+      </p>
+    </div>
+    <div class="col-6">
+      <p>
+        <div class="attributes-size"><strong>Views: <%= product.views %></strong></div>
+      </p>
+    </div>
+  </div>
 </div>
+
+<style>
+  .attributes-size {
+    font-size: 12px;
+  }
+</style>
