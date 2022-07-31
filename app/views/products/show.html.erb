@@ -2,6 +2,7 @@
   <p style="color: green"><%= notice %></p>
 
   <%= render @product %>
+    <%= line_chart @product.prices.group(:updated_at).sum(:price), suffix: "$" %>
     <h3>Agregar nuevo precio de hoy</h3>
     <%= simple_form_for [@product, @new_price] do |f| %>
       <%= f.input :price %>
