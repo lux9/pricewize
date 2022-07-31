@@ -1,0 +1,22 @@
+<div class="container">
+
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Products</h1>
+
+  <div id="products">
+    <% @products.take(10).each do |product| %>
+      <div class="card">
+        <%= render product %>
+      <p>
+        <%= link_to "Show this product", product %>
+      </p>
+      <%= line_chart product.prices.group(:updated_at).sum(:price), suffix: "$" %>
+
+
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "New product", new_product_path %>
+</div>
