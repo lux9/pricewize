@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
+    @categories = Category.all.order(:title)
     @products = Product.all.order(views: :desc)
   end
 

@@ -1,12 +1,12 @@
 <div id="<%= dom_id product %>">
-  <p>
+  <p class="maxed-height">
     <strong>Nombre:</strong>
-    <%= product.title %>
+    <%= product.title.truncate(35) %>
   </p>
-  <div class="row">
+  <div class="row maxed-description">
     <div class="col-6">
       <p>
-        <div class="attributes-size"><strong>Categoria:</strong>
+        <div class="attributes-size">
           <%= link_to product.category.title, category_path(product.category), class:'attributes-size btn btn-sm btn-outline-primary' %>
         </div>
       </p>
@@ -22,5 +22,12 @@
 <style>
   .attributes-size {
     font-size: 12px;
+  }
+  .maxed-height {
+    height: 24px;
+  }
+  .maxed-description {
+    height: 78px;
+
   }
 </style>
