@@ -12,8 +12,8 @@
       <% end %>
     </div>
   <div>
-    <%= link_to "Edit this product", edit_product_path(@product) %> |
-    <%= link_to "Back to products", products_path %>
+    <%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-sm btn-primary" %> |
+    <%= link_to "Back to products", products_path, class: "btn btn-sm btn-danger"  %>
     <h4>Price history</h4>
     <% @product.prices.each do |price| %>
       <p>Added on <%= price.updated_at %>: $<%= price.price %></p>
