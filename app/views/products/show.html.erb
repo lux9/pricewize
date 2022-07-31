@@ -1,10 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @product %>
+  <%= render @product %>
+    <h3>Agregar nuevo precio de hoy</h3>
+    <%= simple_form_for [@product, @new_price] do |f| %>
+      <%= f.input :price %>
+      <%= f.submit %>
+    <% end %>
+  <div>
+    <%= link_to "Edit this product", edit_product_path(@product) %> |
+    <%= link_to "Back to products", products_path %>
 
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
+    <%#= button_to "Destroy this product", @product, method: :delete %>
+  </div>
 
-  <%= button_to "Destroy this product", @product, method: :delete %>
 </div>
