@@ -3,19 +3,21 @@
   <p style="color: green"><%= notice %></p>
 
   <h1>Products</h1>
-
-  <div id="products">
-    <% @products.take(10).each do |product| %>
-      <div class="card m-5 p-5">
-        <%= render product %>
-      <p>
-        <%= link_to "Show this product", product %>
-      </p>
-      <%= line_chart product.prices.group(:updated_at).sum(:price), suffix: "$" %>
-
-
-      </div>
-    <% end %>
+  <div class="">
+    
+    <div id="products" class="row">
+      <% @products.each do |product| %>
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="card p-5 m-3">
+          <%= render product %>
+        <p>
+        </p>
+        <%= line_chart product.prices.group(:updated_at).sum(:price), suffix: "$" %>
+        <%= link_to "Ver producto", product, class:'btn btn-primary' %>
+        </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <%= link_to "New product", new_product_path %>

@@ -4,11 +4,13 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    @products = Product.all.order(views: :desc)
   end
 
   # GET /products/1 or /products/1.json
   def show
+    @product.views += 1
+    @product.save
     @new_price = Price.new
   end
 

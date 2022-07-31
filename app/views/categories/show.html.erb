@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%= @category.title %></h1>
+
+  <ul>
+  <% @category.products.order(views: :desc).each do |product| %>
+    <li><%= link_to product.title, product_path(product) %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Volver Inicio", products_path, class:'btn btn-primary' %>
+</div>

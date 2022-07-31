@@ -1,9 +1,12 @@
 <div id="<%= dom_id product %>">
   <p>
-    <strong>Title:</strong>
+    <strong>Nombre:</strong>
     <%= product.title %>
   </p>
-
+  <p>
+    <strong>Categoria:</strong>
+    <%= link_to product.category.title, category_path(product.category), class:'btn btn-sm btn-outline-primary' %>
+  </p>
   <p>
     <strong>Views:</strong>
     <%= product.views %>
