@@ -7,13 +7,15 @@
     <div class="d-flex justify-content-around text-center">
       <%= simple_form_for [@product, @new_price] do |f| %>
         <%= f.input :price %>
-        <%= f.submit %>
+          <%= f.submit 'Agregar', class: "btn btn-default btn-primary" %>
 
       <% end %>
     </div>
   <div>
-    <%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-sm btn-primary" %> |
-    <%= link_to "Back to products", products_path, class: "btn btn-sm btn-danger"  %>
+    <div class="d-flex justify-content-between mt-5">
+      <%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-sm btn-primary" %> |
+      <%= link_to "Back to products", products_path, class: "btn btn-sm btn-danger"  %>
+    </div>
     <h4>Price history</h4>
     <% @product.prices.each do |price| %>
       <p>Added on <%= price.updated_at %>: $<%= price.price %></p>

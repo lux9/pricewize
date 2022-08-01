@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+.attributes-size {
+  font-size: 12px;
+}
+.maxed-height {
+  height: 40px;
+}
+.maxed-description {
+  height: 78px;
+}
+.collapsed-items {
+  font-size: 12px;
+  margin-bottom: 1px;
+}
+.card-hovered:hover {
+  background-color: #efefef;
+}
