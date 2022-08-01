@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @categories = Category.all.order(:title)
-    @products = Product.all.order(views: :desc)
+    @products = Product.all.order(views: :desc).page params[:page]
   end
 
   # GET /products/1 or /products/1.json

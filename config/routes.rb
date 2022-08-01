@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :products do
+    get '/page/:page', action: :index, on: :collection
     resources :prices, only: :create
   end
   resources :categories, only: :show
