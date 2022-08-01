@@ -51,7 +51,7 @@ CATEGORIES.each do |title|
         product: product,
         sales: rand(5..30),
         rate: rand(3..10),
-        price: main_price + rand(50..200),
+        price: main_price + rand(50..500),
         created_at: created_at_d,
         updated_at: updated_at_d,
       )
