@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     get '/page/:page', action: :index, on: :collection
     resources :prices, only: :create
   end
+  resources :prices, only: [:destroy, :show]
+  
   resources :categories, only: [:show, :index]
   devise_for :users
   root to: "products#index"

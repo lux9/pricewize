@@ -1,6 +1,5 @@
 <div class="container">
   <p style="color: green"><%= notice %></p>
-
     <div class="col-12 col-md-12 col-lg-12">
       <div class="card p-1 m-3 card-hovered">
       <div class="row" style="max-height: 225px;">
@@ -31,8 +30,10 @@
     <h4>Historial de precios</h4>
     <% @product.prices.each do |price| %>
       <p>Agregado el <%= price.updated_at %>: $<%= price.price %></p>
+      
+      <a href="<%= price_path(price) %>" data-method="delete" rel="nofollow"><i class="fa-solid fa-trash"></i></a>
+
     <% end %>
-    <%#= button_to "Destroy this product", @product, method: :delete %>
   </div>
 
 </div>

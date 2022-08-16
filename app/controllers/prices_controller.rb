@@ -1,6 +1,13 @@
 class PricesController < ApplicationController
   # before_action :set_price, only: %i[ show edit update destroy ]
   skip_before_action :authenticate_user!
+  def show
+    @price = Price.find(params[:id])
+    product = @price.product
+    @price.destroy
+    redirect_to product_path(product)
+  end
+  
   def create
     @new_price = Price.new(price_params)
     @new_price.product = Product.find(params[:product_id])
