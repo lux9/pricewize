@@ -61,3 +61,22 @@ CATEGORIES.each do |title|
 end
 
 user = User.create(email: "admin@ahorramais.com", password: "ahorramais321")
+product = Product.create(
+  title: "iPhone XR",
+  category: Category.find_by(title: "Tecnología"),
+  image_link: "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/09/20095113/iPhone-XR2.jpg",
+  views: rand(50..999)
+)
+main_price = rand(200..1000)
+rand(5..15).times do |d|
+  created_at_d = Time.now - d.days,
+  updated_at_d = Time.now - d.days,
+  price = Price.create(
+    product: product,
+    sales: rand(5..30),
+    rate: rand(3..10),
+    price: main_price + rand(50..500),
+    created_at: created_at_d,
+    updated_at: updated_at_d,
+  )
+end
