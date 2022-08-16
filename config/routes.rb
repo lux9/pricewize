@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     get '/page/:page', action: :index, on: :collection
     resources :prices, only: :create
   end
-  resources :categories, only: :show
+  resources :categories, only: [:show, :index]
   devise_for :users
   root to: "products#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -28,34 +28,36 @@ CATEGORIES = [
 Price.destroy_all
 Product.destroy_all
 Category.destroy_all
+User.destroy_all
 
 
 CATEGORIES.each do |title|
   category = Category.create(title: title)
     
-  rand(3..11).times do |i|
-    created_at = Time.now - i.days,
-    updated_at = Time.now - i.days,
-    product = Product.create(
-      title: Faker::Game.title,
-      category: category,
-      created_at: created_at,
-      updated_at: updated_at,
-      views: rand(50..999)
-    )
-    main_price = rand(200..1000)
-    rand(5..25).times do |d|
-      created_at_d = Time.now - d.days,
-      updated_at_d = Time.now - d.days,
-      price = Price.create(
-        product: product,
-        sales: rand(5..30),
-        rate: rand(3..10),
-        price: main_price + rand(50..500),
-        created_at: created_at_d,
-        updated_at: updated_at_d,
-      )
-    end
-  end
+  # rand(3..11).times do |i|
+  #   created_at = Time.now - i.days,
+  #   updated_at = Time.now - i.days,
+    # product = Product.create(
+    #   title: Faker::Game.title,
+    #   category: category,
+    #   created_at: created_at,
+    #   updated_at: updated_at,
+    #   views: rand(50..999)
+    # )
+    # main_price = rand(200..1000)
+    # rand(5..25).times do |d|
+    #   created_at_d = Time.now - d.days,
+    #   updated_at_d = Time.now - d.days,
+    #   price = Price.create(
+    #     product: product,
+    #     sales: rand(5..30),
+    #     rate: rand(3..10),
+    #     price: main_price + rand(50..500),
+    #     created_at: created_at_d,
+    #     updated_at: updated_at_d,
+    #   )
+    # end
+  # end
 end
 
+user = User.create(email: "admin@ahorramais.com", password: "ahorramais321")

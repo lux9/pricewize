@@ -1,23 +1,21 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-prizen">
   <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "logo.jpg" %>
-    <% end %>
-    
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
+      <span class=""><i class="fa-solid fa-cart-shopping"></i></span>
+    </button>
+    <%= link_to "/", class: "navbar-brand" do %>
+      <strong><span class='title-ahorra'>AHORRA</span><span class='title-mais'>M<span class='title-ai'>AI</span>S!</span></strong>
+    <% end %>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-magnifying-glass"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+
           <li class="nav-item dropdown">
             <%= image_tag "logo.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -35,3 +33,16 @@
     </div>
   </div>
 </div>
+
+<style>
+  .title-ahorra {
+    color: #27AF1F;
+  }
+  .title-ai {
+    color: yellow;
+  }
+  .title-mais {
+    color: white;
+  }
+  
+</style>

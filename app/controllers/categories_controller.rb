@@ -7,6 +7,9 @@ class CategoriesController < ApplicationController
     # @category.views += 1
     # @category.save
     # @new_price = Price.new
+    
+    @products = @category.products.order(views: :desc).page params[:page]
+
   end 
 
   private
